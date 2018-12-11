@@ -1,0 +1,70 @@
+<html><head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+    var i = 0
+
+    var properties = [
+        'altKey',
+        'charCode',
+        'code',
+        'ctrlKey',
+        'isComposing',
+        'key',
+        'keyCode',
+        'location',
+        'metaKey',
+        'repeat',
+        'shiftKey',
+        'which'
+       	];
+
+    var modifiers = [
+        'Alt',
+        'AltGraph',
+        'Control',
+        'Meta',
+        'Shift'
+    	];
+    
+    function myFunction(event) {
+
+        
+        var eventDescription = "\n";
+
+        for (let property of properties) {
+            eventDescription += property + ": " + event[property] + "\n ";
+        }
+
+        for (let modifier of modifiers) {
+            eventDescription += modifier + ": " + event.getModifierState(modifier) + "\n ";
+        }
+
+        document.getElementById("demo").innerHTML = "Paragraph changed. " + i + " " + eventDescription;
+
+        i++;
+        
+        //event.stopPropagation();
+
+    }
+    
+//getModifierState()
+
+</script>
+
+</head>
+<body onkeydown="myFunction(event)">
+
+	<button type="button" onclick="myFunction()">Click me to
+		display Date and Time.</button>
+
+	<input>
+
+	<p id="demo"></p>
+
+
+
+
+
+</body></html>
