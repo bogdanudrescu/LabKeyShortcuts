@@ -44,9 +44,9 @@
         document.getElementById("demo").innerHTML = "Paragraph changed. " + i + " " + eventDescription;
 
         i++;
-        
-        //event.stopPropagation();
 
+        event.preventDefault();
+        event.stopPropagation();
     }
     
 //getModifierState()
@@ -62,9 +62,5 @@
 	<input>
 
 	<p id="demo"></p>
-
-
-
-
 
 </body></html>
